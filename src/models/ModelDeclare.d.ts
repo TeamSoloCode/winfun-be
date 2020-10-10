@@ -42,3 +42,13 @@ export declare interface Feature {
   show?: number
   sequence?: number
 }
+
+export declare interface Benifit {
+  id ?: number
+  title: string
+  image?: string
+  descriptions: string
+  createdDate?: string
+  show?: number
+  sequence?: number
+}

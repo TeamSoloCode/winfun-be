@@ -84,10 +84,8 @@ router.put("/update_event", async (req: Request, res: Response) => {
 router.get("/get_event_by_id", async (req: Request, res: Response) => {
   try {
     const { eventId } = req.query;
-    if (typeof eventId == "string") {
-      const data = await fetchEventById(Number(eventId));
-      res.status(200).json({ code: 0, data: data });
-    }
+    const data = await fetchEventById(Number(eventId));
+    res.status(200).json({ code: 0, data: data });
   } catch (err) {
     res.status(200).json({ code: 1, message: err });
   }

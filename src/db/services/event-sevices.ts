@@ -20,7 +20,7 @@ export function insertEvent(event: WinfunEvent): Promise<any> {
         \`detailLink\` = ${preparedData(detailLink)}, 
         \`descriptions\` = ${preparedData(descriptions)}, 
         \`show\` = ${show || 1},
-        \`sequence\` = ${sequence || -1},
+        \`sequence\` = ${sequence || null},
         \`eventName\` = ${preparedData(eventName)},
         \`createdDate\` = ${preparedData(createdDate)},
         \`imageURI\` = ${preparedData(imageURI)}`
@@ -55,9 +55,9 @@ export function updateEvent(eventId: number, event: WinfunEvent): Promise<any> {
         descriptions = ${preparedData(descriptions)},
         detailLink = ${preparedData(detailLink)},
         \`show\` = ${show || 1},
-        sequence = ${sequence || -1},
+        sequence = ${sequence || null},
         imageURI = ${preparedData(imageURI)}
-        WHERE id = ${eventId}`.replace(/\n/g, ""),
+        WHERE id = ${eventId}`.replace(/\n/g, "\/n"),
         async (error) => {
           connection.end();
           if (error) {

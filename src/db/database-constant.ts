@@ -3,5 +3,6 @@ export const tableNames = {
     EVENTS: "Events",
     ANONYMOUS_COMMENT: "AnonymousComments",
     FEATURES: "Features",
-    ADMINS: "Admins"
+    ADMINS: "Admins",
+    BENIFITS: "Benifits"
 }

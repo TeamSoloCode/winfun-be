@@ -29,7 +29,7 @@ export function preparedData(data: any){
   }
 
   if(typeof data == 'string'){
-    return `'${data}'`
+    return `'${data}'`.replace(/\n/g, "\\n")
   }
 
   return data
