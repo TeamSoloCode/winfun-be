@@ -115,3 +115,50 @@ export function fetchEventById(eventId: number): Promise<any> {
     throw err;
   }
 }
+
+export function deleteEvent(eventId: number): Promise<any> {
+  try {
+    const connection = mysql.createConnection(mySQLConfig);
+    connection.connect();
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `UPDATE ${tableNames.EVENTS}
+        SET
+        deleted = 1
+        WHERE id = ${eventId}`.replace(/\n/g, ""),
+        async (error) => {
+          connection.end();
+          if (error) {
+            reject(error);
+            return;
+          }
+          const updatedEvent = await fetchEventById(eventId);
+          resolve(updatedEvent);
+        }
+      );
+    });
+  } catch (err) {
+    throw err;
+  }
+}
+
+export function fetchAllExistsEvent(): Promise<any> {
+  try {
+    const connection = mysql.createConnection(mySQLConfig);
+    connection.connect();
+
+    return new Promise((resolve, reject) => {
+      connection.query(`SELECT * FROM ${tableNames.EVENTS} WHERE deleted != 1`, (error, result) => {
+        connection.end();
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        resolve(result);
+      });
+    });
+  } catch (err) {
+    throw err;
+  }
+}
