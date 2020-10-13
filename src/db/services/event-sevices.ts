@@ -57,7 +57,7 @@ export function updateEvent(eventId: number, event: WinfunEvent): Promise<any> {
         \`show\` = ${show || 1},
         sequence = ${sequence || null},
         imageURI = ${preparedData(imageURI)}
-        WHERE id = ${eventId}`.replace(/\n/g, "\/n"),
+        WHERE id = ${eventId}`.replace(/\n/g, ""),
         async (error) => {
           connection.end();
           if (error) {
