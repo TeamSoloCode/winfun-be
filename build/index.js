@@ -80091,7 +80091,7 @@ router.get("/all_exist_features", function (_req, res) { return __awaiter(void 0
         switch (_a.label) {
             case 0:
                 _a.trys.push([0, 2, , 3]);
-                return [4 /*yield*/, features_services_1.fetchExistFeature()];
+                return [4 /*yield*/, features_services_1.fetchAllExistsFeature()];
             case 1:
                 data = _a.sent();
                 res.status(200).json({ code: 0, data: data });
@@ -80099,6 +80099,46 @@ router.get("/all_exist_features", function (_req, res) { return __awaiter(void 0
             case 2:
                 err_4 = _a.sent();
                 res.status(200).json({ code: 1, message: err_4 });
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); });
+router.put("/delete_features", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var featureId, data, err_5;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 2, , 3]);
+                featureId = req.body.featureId;
+                return [4 /*yield*/, features_services_1.deleteFeature(featureId)];
+            case 1:
+                data = _a.sent();
+                res.status(200).json({ code: 0, data: data });
+                return [3 /*break*/, 3];
+            case 2:
+                err_5 = _a.sent();
+                res.status(200).json({ code: 1, message: err_5 });
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); });
+router.get("/fetch_all_exists_feature", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, data, err_6;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                _b.trys.push([0, 2, , 3]);
+                _a = req.query;
+                return [4 /*yield*/, features_services_1.fetchAllExistsFeature()];
+            case 1:
+                data = _b.sent();
+                res.status(200).json({ code: 0, data: data });
+                return [3 /*break*/, 3];
+            case 2:
+                err_6 = _b.sent();
+                res.status(200).json({ code: 1, message: err_6 });
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }
@@ -80153,7 +80193,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchExistFeature = exports.fetchFeatureById = exports.fetchAllFeature = exports.updateFeature = exports.insertFeature = void 0;
+exports.deleteFeature = exports.fetchAllExistsFeature = exports.fetchFeatureById = exports.fetchAllFeature = exports.updateFeature = exports.insertFeature = void 0;
 var mysql_1 = __importDefault(__webpack_require__(17));
 var database_constant_1 = __webpack_require__(27);
 var utils_1 = __webpack_require__(23);
@@ -80199,7 +80239,7 @@ function updateFeature(featureId, feature) {
         var title_2 = feature.title, descriptions_2 = feature.descriptions, image_2 = feature.image, show_2 = feature.show, sequence_2 = feature.sequence;
         return new Promise(function (resolve, reject) {
             connection_2.query(("UPDATE " + database_constant_1.tableNames.FEATURES + "\n        SET\n        title = " + utils_1.preparedData(title_2) + ",\n        descriptions = " + utils_1.preparedData(descriptions_2) + ",\n        `show` = " + show_2 + ",\n        sequence = " + (sequence_2 || null) + ",\n        image = " + utils_1.preparedData(image_2) + "\n        WHERE id = " + featureId).replace(/\n/g, ""), function (error) { return __awaiter(_this, void 0, void 0, function () {
-                var updatedEvent;
+                var updateFeature;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
                         case 0:
@@ -80210,8 +80250,8 @@ function updateFeature(featureId, feature) {
                             }
                             return [4 /*yield*/, fetchFeatureById(featureId)];
                         case 1:
-                            updatedEvent = _a.sent();
-                            resolve(updatedEvent);
+                            updateFeature = _a.sent();
+                            resolve(updateFeature);
                             return [2 /*return*/];
                     }
                 });
@@ -80263,7 +80303,7 @@ function fetchFeatureById(featureId) {
     }
 }
 exports.fetchFeatureById = fetchFeatureById;
-function fetchExistFeature() {
+function fetchAllExistsFeature() {
     try {
         var connection_5 = mysql_1.default.createConnection(mySQLConfig);
         connection_5.connect();
@@ -80282,7 +80322,38 @@ function fetchExistFeature() {
         throw err;
     }
 }
-exports.fetchExistFeature = fetchExistFeature;
+exports.fetchAllExistsFeature = fetchAllExistsFeature;
+function deleteFeature(featureId) {
+    var _this = this;
+    try {
+        var connection_6 = mysql_1.default.createConnection(mySQLConfig);
+        connection_6.connect();
+        return new Promise(function (resolve, reject) {
+            connection_6.query(("UPDATE " + database_constant_1.tableNames.FEATURES + "\n        SET\n        deleted = 1\n        WHERE id = " + featureId).replace(/\n/g, ""), function (error) { return __awaiter(_this, void 0, void 0, function () {
+                var updateFeature;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            connection_6.end();
+                            if (error) {
+                                reject(error);
+                                return [2 /*return*/];
+                            }
+                            return [4 /*yield*/, fetchFeatureById(featureId)];
+                        case 1:
+                            updateFeature = _a.sent();
+                            resolve(updateFeature);
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.deleteFeature = deleteFeature;
 
 
 /***/ }),
