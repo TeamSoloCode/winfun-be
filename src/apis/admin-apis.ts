@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { adminLogin, updateAdminToken } from "../db/services/admin-services";
 import jwt from "jsonwebtoken";
-const privateKey = fs.readFileSync(path.resolve("./src/jwtSecretKey.key"));
+const privateKey = fs.readFileSync(path.resolve("./jwtSecretKey.key"));
 const router = express.Router();
 
 router.post("/admin_login", async (req: Request, res: Response) => {

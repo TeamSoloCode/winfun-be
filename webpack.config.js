@@ -28,7 +28,7 @@ module.exports = {
 		]
 	},
 	optimization: {
-		minimize: NODE_ENV == 'production'
+		minimize: false
 	},
 
 	// I used the onBuildEnd option of the webpack-shell-plugin because it only runs the specified command(s)
