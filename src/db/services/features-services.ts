@@ -55,8 +55,8 @@ export function updateFeature(featureId: number, feature: Feature): Promise<any>
             reject(error);
             return;
           }
-          const updatedEvent = await fetchFeatureById(featureId);
-          resolve(updatedEvent);
+          const updateFeature = await fetchFeatureById(featureId);
+          resolve(updateFeature);
         }
       );
     });
@@ -107,7 +107,7 @@ export function fetchFeatureById(featureId: number): Promise<any> {
   }
 }
 
-export function fetchExistFeature() : Promise<any> {
+export function fetchAllExistsFeature() : Promise<any> {
   try {
     const connection = mysql.createConnection(mySQLConfig);
     connection.connect();
@@ -122,6 +122,32 @@ export function fetchExistFeature() : Promise<any> {
 
         resolve(result);
       });
+    });
+  } catch (err) {
+    throw err;
+  }
+}
+
+export function deleteFeature(featureId: number): Promise<any> {
+  try {
+    const connection = mysql.createConnection(mySQLConfig);
+    connection.connect();
+    return new Promise((resolve, reject) => {
+      connection.query(
+        `UPDATE ${tableNames.FEATURES}
+        SET
+        deleted = 1
+        WHERE id = ${featureId}`.replace(/\n/g, ""),
+        async (error) => {
+          connection.end();
+          if (error) {
+            reject(error);
+            return;
+          }
+          const updateFeature = await fetchFeatureById(featureId);
+          resolve(updateFeature);
+        }
+      );
     });
   } catch (err) {
     throw err;
