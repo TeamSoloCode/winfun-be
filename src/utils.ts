@@ -32,6 +32,12 @@ export function preparedData(data: any){
     return `'${data}'`.replace(/\n/g, "\\n")
   }
 
+  // if(typeof data == 'number'){
+  //   if(data != undefined && data != null)
+  //     return data
+  //   return 0
+  // }
+
   return data
 }
 

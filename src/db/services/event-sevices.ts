@@ -45,7 +45,7 @@ export function updateEvent(eventId: number, event: WinfunEvent): Promise<any> {
     connection.connect();
     let { location, beginDatetime, endDatetime, detailLink, descriptions, show, sequence, eventName, imageURI } = event;
     return new Promise((resolve, reject) => {
-      connection.query(
+      const res = connection.query(
         `UPDATE ${tableNames.EVENTS}
         SET
         eventName = ${preparedData(eventName)},
@@ -54,12 +54,13 @@ export function updateEvent(eventId: number, event: WinfunEvent): Promise<any> {
         endDatetime = ${preparedData(endDatetime)},
         descriptions = ${preparedData(descriptions)},
         detailLink = ${preparedData(detailLink)},
-        \`show\` = ${show || 1},
+        \`show\` = ${show ?? 0},
         sequence = ${sequence || null},
         imageURI = ${preparedData(imageURI)}
         WHERE id = ${eventId}`.replace(/\n/g, ""),
         async (error) => {
           connection.end();
+          console.log(res.sql)
           if (error) {
             reject(error);
             return;
