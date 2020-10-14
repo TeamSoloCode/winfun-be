@@ -79927,7 +79927,7 @@ router.get('/fetch_email_config', function (_req, res) { return __awaiter(void 0
     var emailConfigPath, content;
     return __generator(this, function (_a) {
         try {
-            emailConfigPath = path_1.default.resolve("./src/emailConfig.json");
+            emailConfigPath = path_1.default.resolve("./emailConfig.json");
             content = JSON.parse(fs_1.default.readFileSync(emailConfigPath, 'utf8'));
             /** Shouldn't send the password to client */
             delete content.hostEmailPassword;

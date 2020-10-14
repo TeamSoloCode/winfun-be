@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/fetch_email_config', async (_req: Request, res: Response) => {
     try{
-        const emailConfigPath = path.resolve("./src/emailConfig.json")
+        const emailConfigPath = path.resolve("./emailConfig.json")
         var content = JSON.parse(fs.readFileSync(emailConfigPath, 'utf8'));
         /** Shouldn't send the password to client */
         delete content.hostEmailPassword
