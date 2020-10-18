@@ -1,7 +1,7 @@
 import mysql from "mysql";
 import { tableNames } from "../database-constant";
 import { Feature } from "../../models/ModelDeclare";
-import { preparedData } from '../../utils'
+import { preparedData } from "../../utils";
 const mySQLConfig = require("../dbconfig.json");
 
 export function insertBenifit(feature: Feature): Promise<any> {
@@ -9,7 +9,7 @@ export function insertBenifit(feature: Feature): Promise<any> {
     const connection = mysql.createConnection(mySQLConfig);
     connection.connect();
     let { title, descriptions, image, show, sequence } = feature;
-    
+
     return new Promise((resolve, reject) => {
       connection.query(
         `INSERT INTO ${tableNames.BENIFITS} 
@@ -18,16 +18,17 @@ export function insertBenifit(feature: Feature): Promise<any> {
         \`descriptions\` = ${preparedData(descriptions)}, 
         \`show\` = ${show || 1},
         \`sequence\` = ${sequence || null},
-        \`image\` = ${preparedData(image)}`
-        .replace(/\n/g, ""), async (error, result) => {
-        connection.end();
-        if (error) {
-          reject(error);
-          return;
+        \`image\` = ${preparedData(image)}`.replace(/\n/g, ""),
+        async (error, result) => {
+          connection.end();
+          if (error) {
+            reject(error);
+            return;
+          }
+          const insertedData = await fetchBenifitById(result.insertId);
+          resolve(insertedData);
         }
-        const insertedData = await fetchBenifitById(result.insertId)
-        resolve(insertedData);
-      });
+      );
     });
   } catch (err) {
     throw err;
@@ -107,23 +108,23 @@ export function fetchBenifitById(benifitId: number): Promise<any> {
   }
 }
 
-export function fetchExistBenifit() : Promise<any> {
-    try {
-      const connection = mysql.createConnection(mySQLConfig);
-      connection.connect();
-  
-      return new Promise((resolve, reject) => {
-        connection.query(`SELECT * FROM ${tableNames.BENIFITS} WHERE deleted != 1`, (error, result) => {
-          connection.end();
-          if (error) {
-            reject(error);
-            return;
-          }
-  
-          resolve(result);
-        });
+export function fetchExistBenifit(): Promise<any> {
+  try {
+    const connection = mysql.createConnection(mySQLConfig);
+    connection.connect();
+
+    return new Promise((resolve, reject) => {
+      connection.query(`SELECT * FROM ${tableNames.BENIFITS} WHERE deleted != 1`, (error, result) => {
+        connection.end();
+        if (error) {
+          reject(error);
+          return;
+        }
+
+        resolve(result);
       });
-    } catch (err) {
-      throw err;
-    }
+    });
+  } catch (err) {
+    throw err;
   }
+}

@@ -4,5 +4,6 @@ export const tableNames = {
     ANONYMOUS_COMMENT: "AnonymousComments",
     FEATURES: "Features",
     ADMINS: "Admins",
-    BENIFITS: "Benifits"
+    BENIFITS: "Benifits",
+    EMAIL_CONFIG: "EmailConfig"
 }

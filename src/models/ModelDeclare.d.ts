@@ -27,6 +27,7 @@ export declare interface AnonymousComment {
   phoneNumber: string;
   name: string;
   contents: string;
+  job: string;
   sequence: number;
   userImage?: string;
   createdDate?: string;
@@ -51,4 +52,12 @@ export declare interface Benifit {
   createdDate?: string
   show?: number
   sequence?: number
+}
+
+export declare interface EmailConfig {
+  id?: number
+  sendingEmail: string
+  sendingEmailPassword: string
+  receivingEmails: string
+  emailSubject: string
 }

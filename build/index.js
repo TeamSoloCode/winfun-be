@@ -5787,12 +5787,6 @@ module.exports = require("path");
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-module.exports = require("fs");
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 try {
@@ -5803,6 +5797,12 @@ try {
   module.exports = __webpack_require__(268);
 }
 
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("fs");
 
 /***/ }),
 /* 7 */
@@ -6006,12 +6006,12 @@ module.exports = require("crypto");
 
 
 
-const urllib = __webpack_require__(16);
+const urllib = __webpack_require__(17);
 const util = __webpack_require__(2);
-const fs = __webpack_require__(5);
+const fs = __webpack_require__(6);
 const fetch = __webpack_require__(47);
 const dns = __webpack_require__(98);
-const net = __webpack_require__(19);
+const net = __webpack_require__(20);
 
 const DNS_TTL = 5 * 60 * 1000;
 
@@ -7084,12 +7084,6 @@ function DeprecationError (namespace, message, stack) {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, exports) {
-
-module.exports = require("url");
-
-/***/ }),
-/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Classes = Object.create(null);
@@ -7256,6 +7250,12 @@ function loadClass(className) {
 
 
 /***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = require("url");
+
+/***/ }),
 /* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7286,12 +7286,18 @@ exports.UseOldPasswordPacket = __webpack_require__(356);
 
 /***/ }),
 /* 19 */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"host\":\"18.139.199.158\",\"port\":3306,\"user\":\"dev\",\"password\":\"dev2020\",\"database\":\"mva_dev\"}");
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports) {
 
 module.exports = require("net");
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7604,7 +7610,7 @@ function newObject() {
 
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Util           = __webpack_require__(2);
@@ -7735,13 +7741,26 @@ Sequence.prototype._onTimeout = function _onTimeout() {
 
 
 /***/ }),
-/* 22 */
-/***/ (function(module) {
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = JSON.parse("{\"host\":\"18.139.199.158\",\"port\":3306,\"user\":\"dev\",\"password\":\"dev2020\",\"database\":\"winfun\"}");
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.tableNames = void 0;
+exports.tableNames = {
+    REGISTER_NOW: "RegisterNow",
+    EVENTS: "Events",
+    ANONYMOUS_COMMENT: "AnonymousComments",
+    FEATURES: "Features",
+    ADMINS: "Admins",
+    BENIFITS: "Benifits",
+    EMAIL_CONFIG: "EmailConfig"
+};
+
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7763,7 +7782,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.writeIntoJSONFile = exports.preparedData = exports.uploadImage = void 0;
 var multer = __webpack_require__(404);
-var fs_1 = __importDefault(__webpack_require__(5));
+var fs_1 = __importDefault(__webpack_require__(6));
 var path_1 = __importDefault(__webpack_require__(4));
 var storage = multer.diskStorage({
     destination: function (_req, _file, cb) {
@@ -7816,7 +7835,7 @@ exports.writeIntoJSONFile = writeIntoJSONFile;
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -7900,7 +7919,7 @@ module.exports = safer
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8173,7 +8192,7 @@ function tryNormalizeType (value) {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8223,7 +8242,7 @@ module.exports = Duplex;
 
 /*<replacement>*/
 var util = Object.create(__webpack_require__(9));
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var Readable = __webpack_require__(88);
@@ -8310,24 +8329,6 @@ Duplex.prototype._destroy = function (err, cb) {
 };
 
 /***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.tableNames = void 0;
-exports.tableNames = {
-    REGISTER_NOW: "RegisterNow",
-    EVENTS: "Events",
-    ANONYMOUS_COMMENT: "AnonymousComments",
-    FEATURES: "Features",
-    ADMINS: "Admins",
-    BENIFITS: "Benifits"
-};
-
-
-/***/ }),
 /* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8370,7 +8371,7 @@ var objectKeys = Object.keys || function (obj) {
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var Readable = __webpack_require__(243);
@@ -8656,7 +8657,7 @@ var objectKeys = Object.keys || function (obj) {
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var Readable = __webpack_require__(248);
@@ -8899,7 +8900,7 @@ function parse(val) {
 var deprecate = __webpack_require__(15)('http-errors')
 var setPrototypeOf = __webpack_require__(38)
 var statuses = __webpack_require__(39)
-var inherits = __webpack_require__(6)
+var inherits = __webpack_require__(5)
 var toIdentifier = __webpack_require__(269)
 
 /**
@@ -9372,7 +9373,7 @@ function patchAssignSocket(res, callback) {
  * @private
  */
 
-var url = __webpack_require__(16)
+var url = __webpack_require__(17)
 var parse = url.parse
 var Url = url.Url
 
@@ -10375,7 +10376,7 @@ exports = module.exports = function(a, b){
 
 var Crypto           = __webpack_require__(10);
 var Events           = __webpack_require__(3);
-var Net              = __webpack_require__(19);
+var Net              = __webpack_require__(20);
 var tls              = __webpack_require__(54);
 var ConnectionConfig = __webpack_require__(55);
 var Protocol         = __webpack_require__(328);
@@ -10965,7 +10966,7 @@ function nextTick(fn, arg1, arg2, arg3) {
 
 const http = __webpack_require__(35);
 const https = __webpack_require__(380);
-const urllib = __webpack_require__(16);
+const urllib = __webpack_require__(17);
 const zlib = __webpack_require__(68);
 const PassThrough = __webpack_require__(1).PassThrough;
 const Cookies = __webpack_require__(381);
@@ -12013,7 +12014,7 @@ var encodeUrl = __webpack_require__(41)
 var escapeHtml = __webpack_require__(42)
 var etag = __webpack_require__(78)
 var fresh = __webpack_require__(79)
-var fs = __webpack_require__(5)
+var fs = __webpack_require__(6)
 var mime = __webpack_require__(310)
 var ms = __webpack_require__(312)
 var onFinished = __webpack_require__(33)
@@ -13132,7 +13133,7 @@ module.exports = require("tls");
 /* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var urlParse        = __webpack_require__(16).parse;
+var urlParse        = __webpack_require__(17).parse;
 var ClientConstants = __webpack_require__(36);
 var Charsets        = __webpack_require__(83);
 var SSLProfiles     = null;
@@ -13436,7 +13437,7 @@ module.exports = require("os");
 
 const packageInfo = __webpack_require__(13);
 const EventEmitter = __webpack_require__(3).EventEmitter;
-const net = __webpack_require__(19);
+const net = __webpack_require__(20);
 const tls = __webpack_require__(54);
 const os = __webpack_require__(57);
 const crypto = __webpack_require__(10);
@@ -15255,8 +15256,8 @@ module.exports = LeWindows;
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global exports*/
-var SignStream = __webpack_require__(441);
-var VerifyStream = __webpack_require__(445);
+var SignStream = __webpack_require__(442);
+var VerifyStream = __webpack_require__(446);
 
 var ALGORITHMS = [
   'HS256', 'HS384', 'HS512',
@@ -15745,7 +15746,7 @@ function coerce(val) {
 
 // Some environments don't have global Buffer (e.g. React Native).
 // Solution would be installing npm modules "buffer" and "stream" explicitly.
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 var bomHandling = __webpack_require__(275),
     iconv = module.exports;
@@ -18076,7 +18077,7 @@ module.exports = etag
  */
 
 var crypto = __webpack_require__(10)
-var Stats = __webpack_require__(5).Stats
+var Stats = __webpack_require__(6).Stats
 
 /**
  * Module variables.
@@ -19342,10 +19343,10 @@ Auth.int32Read = function(buffer, offset){
 /***/ (function(module, exports, __webpack_require__) {
 
 var ClientConstants = __webpack_require__(36);
-var fs              = __webpack_require__(5);
+var fs              = __webpack_require__(6);
 var Packets         = __webpack_require__(18);
 var ResultSet       = __webpack_require__(362);
-var Sequence        = __webpack_require__(21);
+var Sequence        = __webpack_require__(22);
 var ServerStatus    = __webpack_require__(363);
 var Readable        = __webpack_require__(87);
 var Util            = __webpack_require__(2);
@@ -19590,7 +19591,7 @@ if (process.env.READABLE_STREAM === 'disable' && Stream) {
   exports.Stream = Stream || exports;
   exports.Readable = exports;
   exports.Writable = __webpack_require__(91);
-  exports.Duplex = __webpack_require__(26);
+  exports.Duplex = __webpack_require__(27);
   exports.Transform = __webpack_require__(93);
   exports.PassThrough = __webpack_require__(367);
 }
@@ -19668,7 +19669,7 @@ function _isUint8Array(obj) {
 
 /*<replacement>*/
 var util = Object.create(__webpack_require__(9));
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -19702,7 +19703,7 @@ function prependListener(emitter, event, fn) {
 }
 
 function ReadableState(options, stream) {
-  Duplex = Duplex || __webpack_require__(26);
+  Duplex = Duplex || __webpack_require__(27);
 
   options = options || {};
 
@@ -19779,7 +19780,7 @@ function ReadableState(options, stream) {
 }
 
 function Readable(options) {
-  Duplex = Duplex || __webpack_require__(26);
+  Duplex = Duplex || __webpack_require__(27);
 
   if (!(this instanceof Readable)) return new Readable(options);
 
@@ -20780,7 +20781,7 @@ Writable.WritableState = WritableState;
 
 /*<replacement>*/
 var util = Object.create(__webpack_require__(9));
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 /*<replacement>*/
@@ -20813,7 +20814,7 @@ util.inherits(Writable, Stream);
 function nop() {}
 
 function WritableState(options, stream) {
-  Duplex = Duplex || __webpack_require__(26);
+  Duplex = Duplex || __webpack_require__(27);
 
   options = options || {};
 
@@ -20963,7 +20964,7 @@ if (typeof Symbol === 'function' && Symbol.hasInstance && typeof Function.protot
 }
 
 function Writable(options) {
-  Duplex = Duplex || __webpack_require__(26);
+  Duplex = Duplex || __webpack_require__(27);
 
   // Writable ctor is applied to Duplexes, too.
   // `realHasInstance` is necessary because using plain `instanceof`
@@ -21775,11 +21776,11 @@ function simpleEnd(buf) {
 
 module.exports = Transform;
 
-var Duplex = __webpack_require__(26);
+var Duplex = __webpack_require__(27);
 
 /*<replacement>*/
 var util = Object.create(__webpack_require__(9));
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(Transform, Duplex);
@@ -21934,7 +21935,7 @@ module.exports = __webpack_require__(371);
 /* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var mysql          = __webpack_require__(17);
+var mysql          = __webpack_require__(16);
 var Connection     = __webpack_require__(45);
 var EventEmitter   = __webpack_require__(3).EventEmitter;
 var Util           = __webpack_require__(2);
@@ -24438,7 +24439,7 @@ module.exports = {
 
 const crypto = __webpack_require__(10);
 const os = __webpack_require__(57);
-const fs = __webpack_require__(5);
+const fs = __webpack_require__(6);
 const punycode = __webpack_require__(101);
 const PassThrough = __webpack_require__(1).PassThrough;
 const shared = __webpack_require__(11);
@@ -41490,7 +41491,7 @@ var Stream = __webpack_require__(1);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var StringDecoder;
@@ -42437,7 +42438,7 @@ Writable.WritableState = WritableState;
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var Stream = __webpack_require__(1);
@@ -43181,7 +43182,7 @@ var Duplex = __webpack_require__(28);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(Transform, Duplex);
@@ -43388,7 +43389,7 @@ var Stream = __webpack_require__(1);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var StringDecoder;
@@ -44335,7 +44336,7 @@ Writable.WritableState = WritableState;
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 var Stream = __webpack_require__(1);
@@ -45079,7 +45080,7 @@ var Duplex = __webpack_require__(30);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(Transform, Duplex);
@@ -45569,10 +45570,10 @@ module.exports = DataStream;
 /* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var bufferEqual = __webpack_require__(442);
+var bufferEqual = __webpack_require__(443);
 var Buffer = __webpack_require__(7).Buffer;
 var crypto = __webpack_require__(10);
-var formatEcdsa = __webpack_require__(443);
+var formatEcdsa = __webpack_require__(444);
 var util = __webpack_require__(2);
 
 var MSG_INVALID_ALGORITHM = '"%s" is not a valid algorithm.\n  Supported algorithms are:\n  "HS256", "HS384", "HS512", "RS256", "RS384", "RS512", "PS256", "PS384", "PS512", "ES256", "ES384", "ES512" and "none".'
@@ -45879,7 +45880,7 @@ module.exports = TokenExpiredError;
 /* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var ms = __webpack_require__(447);
+var ms = __webpack_require__(448);
 
 module.exports = function (time, iat) {
   var timestamp = iat || Math.floor(Date.now() / 1000);
@@ -45902,7 +45903,7 @@ module.exports = function (time, iat) {
 /* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var semver = __webpack_require__(448);
+var semver = __webpack_require__(449);
 
 module.exports = semver.satisfies(process.version, '^6.12.0 || >=8.0.0');
 
@@ -45919,17 +45920,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.dbConnection = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var mysql_1 = __importDefault(__webpack_require__(17));
+var mysql_1 = __importDefault(__webpack_require__(16));
 var register_now_1 = __webpack_require__(376);
 var events_1 = __webpack_require__(402);
 var upload_download_1 = __webpack_require__(432);
 var anonymous_comment_1 = __webpack_require__(433);
 var email_info_1 = __webpack_require__(435);
-var feature_apis_1 = __webpack_require__(436);
-var admin_apis_1 = __webpack_require__(438);
-var benifit_apis_1 = __webpack_require__(457);
+var feature_apis_1 = __webpack_require__(437);
+var admin_apis_1 = __webpack_require__(439);
+var benifit_apis_1 = __webpack_require__(458);
 var server = express_1.default();
-var mySQLConfig = __webpack_require__(22);
+var mySQLConfig = __webpack_require__(19);
 var bodyParser = __webpack_require__(61);
 server.use(bodyParser.json()); // to support JSON-encoded bodies
 server.use(bodyParser.urlencoded({
@@ -46253,7 +46254,7 @@ var contentType = __webpack_require__(37)
 var createError = __webpack_require__(32)
 var debug = __webpack_require__(12)('body-parser:json')
 var read = __webpack_require__(40)
-var typeis = __webpack_require__(25)
+var typeis = __webpack_require__(26)
 
 /**
  * Module exports.
@@ -47075,14 +47076,14 @@ function createWritableStdioStream (fd) {
       break;
 
     case 'FILE':
-      var fs = __webpack_require__(5);
+      var fs = __webpack_require__(6);
       stream = new fs.SyncWriteStream(fd, { autoClose: false });
       stream._type = 'fs';
       break;
 
     case 'PIPE':
     case 'TCP':
-      var net = __webpack_require__(19);
+      var net = __webpack_require__(20);
       stream = new net.Socket({
         fd: fd,
         readable: false,
@@ -47533,7 +47534,7 @@ for (var i = 0; i < modules.length; i++) {
 
 "use strict";
 
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 // Export Node.js internal encodings.
 
@@ -47734,7 +47735,7 @@ module.exports = require("string_decoder");
 
 "use strict";
 
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 // Note: UTF16-LE (or UCS2) codec is Node.js native. See encodings/internal.js
 
@@ -47918,7 +47919,7 @@ function detectEncoding(buf, defaultEncoding) {
 
 "use strict";
 
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 // UTF-7 codec, according to https://tools.ietf.org/html/rfc2152
 // See also below a UTF-7-IMAP codec, according to http://tools.ietf.org/html/rfc3501#section-5.1.3
@@ -48215,7 +48216,7 @@ Utf7IMAPDecoder.prototype.end = function() {
 
 "use strict";
 
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 // Single-byte codec. Needs a 'chars' string parameter that contains 256 or 128 chars that
 // correspond to encoded bytes (if 128 - then lower half is ASCII). 
@@ -48932,7 +48933,7 @@ module.exports = {
 
 "use strict";
 
-var Buffer = __webpack_require__(24).Buffer;
+var Buffer = __webpack_require__(25).Buffer;
 
 // Multibyte codec. In this scheme, a character is represented by 1 or more bytes.
 // Our codec supports UTF-16 surrogates, extensions for GB18030 and unicode sequences.
@@ -50474,7 +50475,7 @@ module.exports = JSON.parse("{\"application/1d-interleaved-parityfec\":{\"source
 var bytes = __webpack_require__(31)
 var debug = __webpack_require__(12)('body-parser:raw')
 var read = __webpack_require__(40)
-var typeis = __webpack_require__(25)
+var typeis = __webpack_require__(26)
 
 /**
  * Module exports.
@@ -50583,7 +50584,7 @@ var bytes = __webpack_require__(31)
 var contentType = __webpack_require__(37)
 var debug = __webpack_require__(12)('body-parser:text')
 var read = __webpack_require__(40)
-var typeis = __webpack_require__(25)
+var typeis = __webpack_require__(26)
 
 /**
  * Module exports.
@@ -50715,7 +50716,7 @@ var createError = __webpack_require__(32)
 var debug = __webpack_require__(12)('body-parser:urlencoded')
 var deprecate = __webpack_require__(15)('body-parser')
 var read = __webpack_require__(40)
-var typeis = __webpack_require__(25)
+var typeis = __webpack_require__(26)
 
 /**
  * Module exports.
@@ -51601,9 +51602,9 @@ var query = __webpack_require__(76);
 var debug = __webpack_require__(12)('express:application');
 var View = __webpack_require__(307);
 var http = __webpack_require__(35);
-var compileETag = __webpack_require__(20).compileETag;
-var compileQueryParser = __webpack_require__(20).compileQueryParser;
-var compileTrust = __webpack_require__(20).compileTrust;
+var compileETag = __webpack_require__(21).compileETag;
+var compileQueryParser = __webpack_require__(21).compileQueryParser;
+var compileTrust = __webpack_require__(21).compileTrust;
 var deprecate = __webpack_require__(15)('express');
 var flatten = __webpack_require__(43);
 var merge = __webpack_require__(44);
@@ -52769,7 +52770,7 @@ exports.init = function(app){
 
 var debug = __webpack_require__(12)('express:view');
 var path = __webpack_require__(4);
-var fs = __webpack_require__(5);
+var fs = __webpack_require__(6);
 
 /**
  * Module variables.
@@ -52968,7 +52969,7 @@ webpackEmptyContext.id = 308;
  * @private
  */
 
-var ReadStream = __webpack_require__(5).ReadStream
+var ReadStream = __webpack_require__(6).ReadStream
 var Stream = __webpack_require__(1)
 
 /**
@@ -53037,7 +53038,7 @@ function onOpenClose() {
 /***/ (function(module, exports, __webpack_require__) {
 
 var path = __webpack_require__(4);
-var fs = __webpack_require__(5);
+var fs = __webpack_require__(6);
 
 function Mime() {
   // Map of extension -> mime type
@@ -54105,8 +54106,8 @@ function parse (header) {
 
 var accepts = __webpack_require__(316);
 var deprecate = __webpack_require__(15)('express');
-var isIP = __webpack_require__(19).isIP;
-var typeis = __webpack_require__(25);
+var isIP = __webpack_require__(20).isIP;
+var typeis = __webpack_require__(26);
 var http = __webpack_require__(35);
 var fresh = __webpack_require__(79);
 var parseRange = __webpack_require__(80);
@@ -55870,15 +55871,15 @@ var deprecate = __webpack_require__(15)('express');
 var encodeUrl = __webpack_require__(41);
 var escapeHtml = __webpack_require__(42);
 var http = __webpack_require__(35);
-var isAbsolute = __webpack_require__(20).isAbsolute;
+var isAbsolute = __webpack_require__(21).isAbsolute;
 var onFinished = __webpack_require__(33);
 var path = __webpack_require__(4);
 var statuses = __webpack_require__(39)
 var merge = __webpack_require__(44);
 var sign = __webpack_require__(323).sign;
-var normalizeType = __webpack_require__(20).normalizeType;
-var normalizeTypes = __webpack_require__(20).normalizeTypes;
-var setCharset = __webpack_require__(20).setCharset;
+var normalizeType = __webpack_require__(21).normalizeType;
+var normalizeTypes = __webpack_require__(21).normalizeTypes;
+var setCharset = __webpack_require__(21).setCharset;
 var cookie = __webpack_require__(324);
 var send = __webpack_require__(53);
 var extname = path.extname;
@@ -57437,7 +57438,7 @@ var escapeHtml = __webpack_require__(42)
 var parseUrl = __webpack_require__(34)
 var resolve = __webpack_require__(4).resolve
 var send = __webpack_require__(53)
-var url = __webpack_require__(16)
+var url = __webpack_require__(17)
 
 /**
  * Module exports.
@@ -63029,7 +63030,7 @@ exports.Handshake = __webpack_require__(360);
 exports.Ping = __webpack_require__(361);
 exports.Query = __webpack_require__(86);
 exports.Quit = __webpack_require__(368);
-exports.Sequence = __webpack_require__(21);
+exports.Sequence = __webpack_require__(22);
 exports.Statistics = __webpack_require__(369);
 
 
@@ -63037,7 +63038,7 @@ exports.Statistics = __webpack_require__(369);
 /* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Sequence = __webpack_require__(21);
+var Sequence = __webpack_require__(22);
 var Util     = __webpack_require__(2);
 var Packets  = __webpack_require__(18);
 var Auth     = __webpack_require__(85);
@@ -66498,7 +66499,7 @@ module.exports = require("timers");
 /* 360 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Sequence        = __webpack_require__(21);
+var Sequence        = __webpack_require__(22);
 var Util            = __webpack_require__(2);
 var Packets         = __webpack_require__(18);
 var Auth            = __webpack_require__(85);
@@ -66630,7 +66631,7 @@ Handshake.prototype['ErrorPacket'] = function(packet) {
 /* 361 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Sequence = __webpack_require__(21);
+var Sequence = __webpack_require__(22);
 var Util     = __webpack_require__(2);
 var Packets  = __webpack_require__(18);
 
@@ -66855,7 +66856,7 @@ var Transform = __webpack_require__(93);
 
 /*<replacement>*/
 var util = Object.create(__webpack_require__(9));
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(PassThrough, Transform);
@@ -66874,7 +66875,7 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 /* 368 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Sequence = __webpack_require__(21);
+var Sequence = __webpack_require__(22);
 var Util     = __webpack_require__(2);
 var Packets  = __webpack_require__(18);
 
@@ -66920,7 +66921,7 @@ Quit.prototype.start = function() {
 /* 369 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Sequence = __webpack_require__(21);
+var Sequence = __webpack_require__(22);
 var Util     = __webpack_require__(2);
 var Packets  = __webpack_require__(18);
 
@@ -68096,13 +68097,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchAllRegisterNow = exports.resendRegisterInfoToHostEmail = exports.sendRegisterInfoToHostEmail = exports.updateSentEmailStatus = exports.insertNewRegisterApplication = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
+var mysql_1 = __importDefault(__webpack_require__(16));
 var nodemailer_1 = __importDefault(__webpack_require__(378));
 var moment_1 = __importDefault(__webpack_require__(0));
 var path_1 = __importDefault(__webpack_require__(4));
-var fs_1 = __importDefault(__webpack_require__(5));
-var database_constant_1 = __webpack_require__(27);
-var mySQLConfig = __webpack_require__(22);
+var fs_1 = __importDefault(__webpack_require__(6));
+var database_constant_1 = __webpack_require__(23);
+var mySQLConfig = __webpack_require__(19);
 function insertNewRegisterApplication(newRegister) {
     try {
         var connection_1 = mysql_1.default.createConnection(mySQLConfig);
@@ -68414,10 +68415,10 @@ const MailComposer = __webpack_require__(382);
 const DKIM = __webpack_require__(385);
 const httpProxyClient = __webpack_require__(389);
 const util = __webpack_require__(2);
-const urllib = __webpack_require__(16);
+const urllib = __webpack_require__(17);
 const packageData = __webpack_require__(13);
 const MailMessage = __webpack_require__(390);
-const net = __webpack_require__(19);
+const net = __webpack_require__(20);
 const dns = __webpack_require__(98);
 const crypto = __webpack_require__(10);
 
@@ -68845,7 +68846,7 @@ module.exports = require("https");
 
 // module to handle cookies
 
-const urllib = __webpack_require__(16);
+const urllib = __webpack_require__(17);
 
 const SESSION_TIMEOUT = 1800; // 30 min
 
@@ -70057,7 +70058,7 @@ const MessageParser = __webpack_require__(386);
 const RelaxedBody = __webpack_require__(387);
 const sign = __webpack_require__(388);
 const PassThrough = __webpack_require__(1).PassThrough;
-const fs = __webpack_require__(5);
+const fs = __webpack_require__(6);
 const path = __webpack_require__(4);
 const crypto = __webpack_require__(10);
 
@@ -70762,9 +70763,9 @@ function relaxedHeaderLine(line) {
  * Minimal HTTP/S proxy client
  */
 
-const net = __webpack_require__(19);
+const net = __webpack_require__(20);
 const tls = __webpack_require__(54);
-const urllib = __webpack_require__(16);
+const urllib = __webpack_require__(17);
 
 /**
  * Establishes proxied connection to destinationPort
@@ -73990,10 +73991,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchAllExistsEvent = exports.deleteEvent = exports.fetchEventById = exports.fetchAllEvent = exports.updateEvent = exports.insertEvent = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
-var database_constant_1 = __webpack_require__(27);
-var utils_1 = __webpack_require__(23);
-var mySQLConfig = __webpack_require__(22);
+var mysql_1 = __importDefault(__webpack_require__(16));
+var database_constant_1 = __webpack_require__(23);
+var utils_1 = __webpack_require__(24);
+var mySQLConfig = __webpack_require__(19);
 function insertEvent(event) {
     try {
         var connection_1 = mysql_1.default.createConnection(mySQLConfig);
@@ -74256,7 +74257,7 @@ module.exports.MulterError = MulterError
 /* 405 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var is = __webpack_require__(25)
+var is = __webpack_require__(26)
 var Busboy = __webpack_require__(406)
 var extend = __webpack_require__(418)
 var onFinished = __webpack_require__(33)
@@ -74442,7 +74443,7 @@ module.exports = makeMiddleware
 /* 406 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(5),
+var fs = __webpack_require__(6),
     WritableStream = __webpack_require__(1).Writable
                      || __webpack_require__(242).Writable,
     inherits = __webpack_require__(2).inherits;
@@ -74577,7 +74578,7 @@ var Transform = __webpack_require__(246);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(PassThrough, Transform);
@@ -77690,7 +77691,7 @@ var Transform = __webpack_require__(251);
 
 /*<replacement>*/
 var util = __webpack_require__(9);
-util.inherits = __webpack_require__(6);
+util.inherits = __webpack_require__(5);
 /*</replacement>*/
 
 util.inherits(PassThrough, Transform);
@@ -78474,7 +78475,7 @@ module.exports = removeUploadedFiles
 /* 426 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var fs = __webpack_require__(5)
+var fs = __webpack_require__(6)
 var os = __webpack_require__(57)
 var path = __webpack_require__(4)
 var crypto = __webpack_require__(10)
@@ -78547,7 +78548,7 @@ module.exports = function (opts) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var path = __webpack_require__(4);
-var fs = __webpack_require__(5);
+var fs = __webpack_require__(6);
 var _0777 = parseInt('0777', 8);
 
 module.exports = mkdirP.mkdirp = mkdirP.mkdirP = mkdirP;
@@ -78679,7 +78680,7 @@ module.exports = function (opts) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var Writable = __webpack_require__(87).Writable
-var inherits = __webpack_require__(6)
+var inherits = __webpack_require__(5)
 var bufferFrom = __webpack_require__(430)
 
 if (typeof Uint8Array === 'undefined') {
@@ -79583,8 +79584,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateAPIs = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var utils_1 = __webpack_require__(23);
-var fs_1 = __importDefault(__webpack_require__(5));
+var utils_1 = __webpack_require__(24);
+var fs_1 = __importDefault(__webpack_require__(6));
 var path_1 = __importDefault(__webpack_require__(4));
 var router = express_1.default.Router();
 router.post("/upload_image", utils_1.uploadImage.single("image"), function (req, res) {
@@ -79757,6 +79758,37 @@ router.put('/update_ano_comment_sequence', function (req, res) { return __awaite
         }
     });
 }); });
+router.put('/update_ano_comment', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var _a, commentId, sequence, email, phoneNumber, name_1, contents, userImage, createdDate, job, show, reviewComment, data, err_5;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0:
+                _b.trys.push([0, 2, , 3]);
+                _a = req.body, commentId = _a.commentId, sequence = _a.sequence, email = _a.email, phoneNumber = _a.phoneNumber, name_1 = _a.name, contents = _a.contents, userImage = _a.userImage, createdDate = _a.createdDate, job = _a.job, show = _a.show;
+                reviewComment = {
+                    sequence: sequence,
+                    email: email,
+                    phoneNumber: phoneNumber,
+                    name: name_1,
+                    contents: contents,
+                    userImage: userImage,
+                    createdDate: createdDate,
+                    job: job,
+                    show: show
+                };
+                return [4 /*yield*/, ano_comment_services_1.updateReviewComment(commentId, reviewComment)];
+            case 1:
+                data = _b.sent();
+                res.status(200).json({ code: 0, data: data });
+                return [3 /*break*/, 3];
+            case 2:
+                err_5 = _b.sent();
+                res.status(200).json({ code: 1, message: err_5 });
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
+        }
+    });
+}); });
 exports.AnonymousCommentAPIs = router;
 
 
@@ -79777,16 +79809,52 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateCommentSequence = exports.updateShowStatus = exports.fetchAllAnonymousComments = exports.addAnonymousComment = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
+exports.updateReviewComment = exports.fetchCommentById = exports.updateCommentSequence = exports.updateShowStatus = exports.fetchAllAnonymousComments = exports.addAnonymousComment = void 0;
+var mysql_1 = __importDefault(__webpack_require__(16));
 var moment_1 = __importDefault(__webpack_require__(0));
-var database_constant_1 = __webpack_require__(27);
-var utils_1 = __webpack_require__(23);
-var mySQLConfig = __webpack_require__(22);
+var database_constant_1 = __webpack_require__(23);
+var utils_1 = __webpack_require__(24);
+var mySQLConfig = __webpack_require__(19);
 function addAnonymousComment(newComment) {
     try {
         var connection_1 = mysql_1.default.createConnection(mySQLConfig);
@@ -79869,6 +79937,58 @@ function updateCommentSequence(anoCommentId, sequence) {
     }
 }
 exports.updateCommentSequence = updateCommentSequence;
+function fetchCommentById(commentId) {
+    try {
+        var connection_5 = mysql_1.default.createConnection(mySQLConfig);
+        connection_5.connect();
+        return new Promise(function (resolve, reject) {
+            connection_5.query("SELECT * FROM " + database_constant_1.tableNames.ANONYMOUS_COMMENT + " WHERE id = " + commentId + " LIMIT 1", function (error, result) {
+                connection_5.end();
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(result[0]);
+            });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.fetchCommentById = fetchCommentById;
+function updateReviewComment(commentId, comment) {
+    var _this = this;
+    try {
+        var connection_6 = mysql_1.default.createConnection(mySQLConfig);
+        connection_6.connect();
+        var sequence_1 = comment.sequence, email_1 = comment.email, phoneNumber_1 = comment.phoneNumber, name_1 = comment.name, contents_1 = comment.contents, userImage_1 = comment.userImage, job_1 = comment.job, show_1 = comment.show;
+        return new Promise(function (resolve, reject) {
+            connection_6.query(("UPDATE " + database_constant_1.tableNames.ANONYMOUS_COMMENT + "\n        SET\n        email = " + utils_1.preparedData(email_1) + ",\n        phoneNumber = " + utils_1.preparedData(phoneNumber_1) + ",\n        name = " + utils_1.preparedData(name_1) + ",\n        contents = " + utils_1.preparedData(contents_1) + ",\n        userImage = " + utils_1.preparedData(userImage_1) + ",\n        job = " + utils_1.preparedData(job_1) + ",\n        `show` = " + show_1 + ",\n        sequence = " + (sequence_1 || null) + "\n        WHERE id = " + commentId).replace(/\n/g, ""), function (error) { return __awaiter(_this, void 0, void 0, function () {
+                var updateFeature;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            connection_6.end();
+                            if (error) {
+                                reject(error);
+                                return [2 /*return*/];
+                            }
+                            return [4 /*yield*/, fetchCommentById(commentId)];
+                        case 1:
+                            updateFeature = _a.sent();
+                            resolve(updateFeature);
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.updateReviewComment = updateReviewComment;
 
 
 /***/ }),
@@ -79919,44 +80039,56 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.EmailInfoAPIs = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var fs_1 = __importDefault(__webpack_require__(5));
-var path_1 = __importDefault(__webpack_require__(4));
-var utils_1 = __webpack_require__(23);
+// import path from 'path'
+// import { writeIntoJSONFile } from '../utils';
+var email_config_services_1 = __webpack_require__(436);
 var router = express_1.default.Router();
-router.get('/fetch_email_config', function (_req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var emailConfigPath, content;
+router.get('/fetch_email_config/:id', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
+    var id, data, err_1;
     return __generator(this, function (_a) {
-        try {
-            emailConfigPath = path_1.default.resolve("./emailConfig.json");
-            content = JSON.parse(fs_1.default.readFileSync(emailConfigPath, 'utf8'));
-            /** Shouldn't send the password to client */
-            delete content.hostEmailPassword;
-            res.status(200).json({ code: 0, data: content });
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 3, , 4]);
+                id = req.params.id;
+                if (!id) return [3 /*break*/, 2];
+                return [4 /*yield*/, email_config_services_1.fetchEmailConfigById(Number(id))];
+            case 1:
+                data = _a.sent();
+                delete data.sendingEmailPassword;
+                res.status(200).json({ code: 0, data: data });
+                return [2 /*return*/];
+            case 2:
+                res.status(200).json({ code: 0, data: [] });
+                return [3 /*break*/, 4];
+            case 3:
+                err_1 = _a.sent();
+                res.status(200).json({ code: 1, message: err_1 });
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
         }
-        catch (err) {
-            res.status(200).json({ code: 1, message: err });
-        }
-        return [2 /*return*/];
     });
 }); });
 router.post('/update_email_config', function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, receiveEmails, emailSubject, newEmailConfig, emailConfigPath, content;
+    var _a, emailConfigId, receivingEmails, emailSubject, emailConfig, data, err_2;
     return __generator(this, function (_b) {
-        try {
-            _a = req.body, receiveEmails = _a.receiveEmails, emailSubject = _a.emailSubject;
-            newEmailConfig = {};
-            if (receiveEmails)
-                newEmailConfig.receiveEmails = receiveEmails;
-            if (emailSubject)
-                newEmailConfig.emailSubject = emailSubject;
-            emailConfigPath = path_1.default.resolve("./src/emailConfig.json");
-            content = utils_1.writeIntoJSONFile(emailConfigPath, newEmailConfig);
-            res.status(200).json({ code: 0, data: content });
+        switch (_b.label) {
+            case 0:
+                _b.trys.push([0, 2, , 3]);
+                _a = req.body, emailConfigId = _a.emailConfigId, receivingEmails = _a.receivingEmails, emailSubject = _a.emailSubject;
+                emailConfig = {};
+                emailConfig.receivingEmails = receivingEmails;
+                emailConfig.emailSubject = emailSubject;
+                return [4 /*yield*/, email_config_services_1.updateEmailConfig(emailConfigId, emailConfig)];
+            case 1:
+                data = _b.sent();
+                res.status(200).json({ code: 0, data: data });
+                return [3 /*break*/, 3];
+            case 2:
+                err_2 = _b.sent();
+                res.status(200).json({ code: 1, message: err_2.message });
+                return [3 /*break*/, 3];
+            case 3: return [2 /*return*/];
         }
-        catch (err) {
-            res.status(200).json({ code: 1, message: err.message });
-        }
-        return [2 /*return*/];
     });
 }); });
 exports.EmailInfoAPIs = router;
@@ -80008,9 +80140,134 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.fetchAllEmailConfig = exports.fetchEmailConfigById = exports.updateEmailConfig = void 0;
+var mysql_1 = __importDefault(__webpack_require__(16));
+var database_constant_1 = __webpack_require__(23);
+var utils_1 = __webpack_require__(24);
+var mySQLConfig = __webpack_require__(19);
+function updateEmailConfig(emailConfigId, emailConfig) {
+    var _this = this;
+    try {
+        var connection_1 = mysql_1.default.createConnection(mySQLConfig);
+        connection_1.connect();
+        var emailSubject_1 = emailConfig.emailSubject, receivingEmails_1 = emailConfig.receivingEmails;
+        return new Promise(function (resolve, reject) {
+            connection_1.query(("UPDATE " + database_constant_1.tableNames.EMAIL_CONFIG + "\n        SET\n        emailSubject = " + utils_1.preparedData(emailSubject_1) + ",\n        receivingEmails = " + utils_1.preparedData(receivingEmails_1) + "\n        WHERE id = " + emailConfigId).replace(/\n/g, ""), function (error) { return __awaiter(_this, void 0, void 0, function () {
+                var updatedEvent;
+                return __generator(this, function (_a) {
+                    switch (_a.label) {
+                        case 0:
+                            connection_1.end();
+                            if (error) {
+                                reject(error);
+                                return [2 /*return*/];
+                            }
+                            return [4 /*yield*/, fetchEmailConfigById(emailConfigId)];
+                        case 1:
+                            updatedEvent = _a.sent();
+                            resolve(updatedEvent);
+                            return [2 /*return*/];
+                    }
+                });
+            }); });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.updateEmailConfig = updateEmailConfig;
+function fetchEmailConfigById(emailConfigId) {
+    try {
+        var connection_2 = mysql_1.default.createConnection(mySQLConfig);
+        connection_2.connect();
+        return new Promise(function (resolve, reject) {
+            connection_2.query("SELECT * FROM " + database_constant_1.tableNames.EMAIL_CONFIG + " WHERE id = " + emailConfigId + " LIMIT 1", function (error, result) {
+                connection_2.end();
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(result[0]);
+            });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.fetchEmailConfigById = fetchEmailConfigById;
+function fetchAllEmailConfig() {
+    try {
+        var connection_3 = mysql_1.default.createConnection(mySQLConfig);
+        connection_3.connect();
+        return new Promise(function (resolve, reject) {
+            connection_3.query("SELECT * FROM " + database_constant_1.tableNames.EMAIL_CONFIG, function (error, result) {
+                connection_3.end();
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                resolve(result[0]);
+            });
+        });
+    }
+    catch (err) {
+        throw err;
+    }
+}
+exports.fetchAllEmailConfig = fetchAllEmailConfig;
+
+
+/***/ }),
+/* 437 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.FeaturesAPIs = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var features_services_1 = __webpack_require__(437);
+var features_services_1 = __webpack_require__(438);
 var router = express_1.default.Router();
 router.post("/insert_feature", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, title, image, descriptions, show, sequence, feature, data, err_1;
@@ -80148,7 +80405,7 @@ exports.FeaturesAPIs = router;
 
 
 /***/ }),
-/* 437 */
+/* 438 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80194,10 +80451,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteFeature = exports.fetchAllExistsFeature = exports.fetchFeatureById = exports.fetchAllFeature = exports.updateFeature = exports.insertFeature = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
-var database_constant_1 = __webpack_require__(27);
-var utils_1 = __webpack_require__(23);
-var mySQLConfig = __webpack_require__(22);
+var mysql_1 = __importDefault(__webpack_require__(16));
+var database_constant_1 = __webpack_require__(23);
+var utils_1 = __webpack_require__(24);
+var mySQLConfig = __webpack_require__(19);
 function insertFeature(feature) {
     var _this = this;
     try {
@@ -80357,7 +80614,7 @@ exports.deleteFeature = deleteFeature;
 
 
 /***/ }),
-/* 438 */
+/* 439 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80404,10 +80661,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdminAPIs = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var fs_1 = __importDefault(__webpack_require__(5));
+var fs_1 = __importDefault(__webpack_require__(6));
 var path_1 = __importDefault(__webpack_require__(4));
-var admin_services_1 = __webpack_require__(439);
-var jsonwebtoken_1 = __importDefault(__webpack_require__(440));
+var admin_services_1 = __webpack_require__(440);
+var jsonwebtoken_1 = __importDefault(__webpack_require__(441));
 var privateKey = fs_1.default.readFileSync(path_1.default.resolve("./jwtSecretKey.key"));
 var router = express_1.default.Router();
 router.post("/admin_login", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
@@ -80455,7 +80712,7 @@ exports.AdminAPIs = router;
 
 
 /***/ }),
-/* 439 */
+/* 440 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80501,10 +80758,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.updateAdminToken = exports.adminLogin = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
-var utils_1 = __webpack_require__(23);
-var database_constant_1 = __webpack_require__(27);
-var mySQLConfig = __webpack_require__(22);
+var mysql_1 = __importDefault(__webpack_require__(16));
+var utils_1 = __webpack_require__(24);
+var database_constant_1 = __webpack_require__(23);
+var mySQLConfig = __webpack_require__(19);
 function adminLogin(username, password) {
     try {
         var connection_1 = mysql_1.default.createConnection(mySQLConfig);
@@ -80552,13 +80809,13 @@ exports.updateAdminToken = updateAdminToken;
 
 
 /***/ }),
-/* 440 */
+/* 441 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = {
   decode: __webpack_require__(254),
-  verify: __webpack_require__(446),
-  sign: __webpack_require__(449),
+  verify: __webpack_require__(447),
+  sign: __webpack_require__(450),
   JsonWebTokenError: __webpack_require__(49),
   NotBeforeError: __webpack_require__(258),
   TokenExpiredError: __webpack_require__(259),
@@ -80566,7 +80823,7 @@ module.exports = {
 
 
 /***/ }),
-/* 441 */
+/* 442 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module*/
@@ -80650,7 +80907,7 @@ module.exports = SignStream;
 
 
 /***/ }),
-/* 442 */
+/* 443 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80698,7 +80955,7 @@ bufferEq.restore = function() {
 
 
 /***/ }),
-/* 443 */
+/* 444 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80706,7 +80963,7 @@ bufferEq.restore = function() {
 
 var Buffer = __webpack_require__(7).Buffer;
 
-var getParamBytesForAlg = __webpack_require__(444);
+var getParamBytesForAlg = __webpack_require__(445);
 
 var MAX_OCTET = 0x80,
 	CLASS_UNIVERSAL = 0,
@@ -80892,7 +81149,7 @@ module.exports = {
 
 
 /***/ }),
-/* 444 */
+/* 445 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -80922,7 +81179,7 @@ module.exports = getParamBytesForAlg;
 
 
 /***/ }),
-/* 445 */
+/* 446 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*global module*/
@@ -81048,7 +81305,7 @@ module.exports = VerifyStream;
 
 
 /***/ }),
-/* 446 */
+/* 447 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var JsonWebTokenError = __webpack_require__(49);
@@ -81279,7 +81536,7 @@ module.exports = function (jwtString, secretOrPublicKey, options, callback) {
 
 
 /***/ }),
-/* 447 */
+/* 448 */
 /***/ (function(module, exports) {
 
 /**
@@ -81447,7 +81704,7 @@ function plural(ms, msAbs, n, name) {
 
 
 /***/ }),
-/* 448 */
+/* 449 */
 /***/ (function(module, exports) {
 
 exports = module.exports = SemVer
@@ -82936,19 +83193,19 @@ function coerce (version) {
 
 
 /***/ }),
-/* 449 */
+/* 450 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var timespan = __webpack_require__(260);
 var PS_SUPPORTED = __webpack_require__(261);
 var jws = __webpack_require__(60);
-var includes = __webpack_require__(450);
-var isBoolean = __webpack_require__(451);
-var isInteger = __webpack_require__(452);
-var isNumber = __webpack_require__(453);
-var isPlainObject = __webpack_require__(454);
-var isString = __webpack_require__(455);
-var once = __webpack_require__(456);
+var includes = __webpack_require__(451);
+var isBoolean = __webpack_require__(452);
+var isInteger = __webpack_require__(453);
+var isNumber = __webpack_require__(454);
+var isPlainObject = __webpack_require__(455);
+var isString = __webpack_require__(456);
+var once = __webpack_require__(457);
 
 var SUPPORTED_ALGS = ['RS256', 'RS384', 'RS512', 'ES256', 'ES384', 'ES512', 'HS256', 'HS384', 'HS512', 'none']
 if (PS_SUPPORTED) {
@@ -83148,7 +83405,7 @@ module.exports = function (payload, secretOrPrivateKey, options, callback) {
 
 
 /***/ }),
-/* 450 */
+/* 451 */
 /***/ (function(module, exports) {
 
 /**
@@ -83899,7 +84156,7 @@ module.exports = includes;
 
 
 /***/ }),
-/* 451 */
+/* 452 */
 /***/ (function(module, exports) {
 
 /**
@@ -83975,7 +84232,7 @@ module.exports = isBoolean;
 
 
 /***/ }),
-/* 452 */
+/* 453 */
 /***/ (function(module, exports) {
 
 /**
@@ -84246,7 +84503,7 @@ module.exports = isInteger;
 
 
 /***/ }),
-/* 453 */
+/* 454 */
 /***/ (function(module, exports) {
 
 /**
@@ -84331,7 +84588,7 @@ module.exports = isNumber;
 
 
 /***/ }),
-/* 454 */
+/* 455 */
 /***/ (function(module, exports) {
 
 /**
@@ -84476,7 +84733,7 @@ module.exports = isPlainObject;
 
 
 /***/ }),
-/* 455 */
+/* 456 */
 /***/ (function(module, exports) {
 
 /**
@@ -84577,7 +84834,7 @@ module.exports = isString;
 
 
 /***/ }),
-/* 456 */
+/* 457 */
 /***/ (function(module, exports) {
 
 /**
@@ -84877,7 +85134,7 @@ module.exports = once;
 
 
 /***/ }),
-/* 457 */
+/* 458 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -84924,7 +85181,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BenifitAPIs = void 0;
 var express_1 = __importDefault(__webpack_require__(14));
-var benifit_service_1 = __webpack_require__(458);
+var benifit_service_1 = __webpack_require__(459);
 var router = express_1.default.Router();
 router.post("/insert_benifit", function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, title, image, descriptions, show, sequence, benifit, data, err_1;
@@ -85022,7 +85279,7 @@ exports.BenifitAPIs = router;
 
 
 /***/ }),
-/* 458 */
+/* 459 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -85068,10 +85325,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.fetchExistBenifit = exports.fetchBenifitById = exports.fetchAllBenifit = exports.updateBenifit = exports.insertBenifit = void 0;
-var mysql_1 = __importDefault(__webpack_require__(17));
-var database_constant_1 = __webpack_require__(27);
-var utils_1 = __webpack_require__(23);
-var mySQLConfig = __webpack_require__(22);
+var mysql_1 = __importDefault(__webpack_require__(16));
+var database_constant_1 = __webpack_require__(23);
+var utils_1 = __webpack_require__(24);
+var mySQLConfig = __webpack_require__(19);
 function insertBenifit(feature) {
     var _this = this;
     try {
@@ -85079,8 +85336,7 @@ function insertBenifit(feature) {
         connection_1.connect();
         var title_1 = feature.title, descriptions_1 = feature.descriptions, image_1 = feature.image, show_1 = feature.show, sequence_1 = feature.sequence;
         return new Promise(function (resolve, reject) {
-            connection_1.query(("INSERT INTO " + database_constant_1.tableNames.BENIFITS + " \n        SET \n        `title` = " + utils_1.preparedData(title_1) + ", \n        `descriptions` = " + utils_1.preparedData(descriptions_1) + ", \n        `show` = " + (show_1 || 1) + ",\n        `sequence` = " + (sequence_1 || null) + ",\n        `image` = " + utils_1.preparedData(image_1))
-                .replace(/\n/g, ""), function (error, result) { return __awaiter(_this, void 0, void 0, function () {
+            connection_1.query(("INSERT INTO " + database_constant_1.tableNames.BENIFITS + " \n        SET \n        `title` = " + utils_1.preparedData(title_1) + ", \n        `descriptions` = " + utils_1.preparedData(descriptions_1) + ", \n        `show` = " + (show_1 || 1) + ",\n        `sequence` = " + (sequence_1 || null) + ",\n        `image` = " + utils_1.preparedData(image_1)).replace(/\n/g, ""), function (error, result) { return __awaiter(_this, void 0, void 0, function () {
                 var insertedData;
                 return __generator(this, function (_a) {
                     switch (_a.label) {
