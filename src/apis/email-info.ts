@@ -1,6 +1,4 @@
 import express, { Request, Response } from 'express';
-// import path from 'path'
-// import { writeIntoJSONFile } from '../utils';
 import { fetchEmailConfigById, updateEmailConfig } from "../db/services/email-config-services"
 import { EmailConfig } from '../models/ModelDeclare';
 

@@ -114,7 +114,7 @@ export function fetchExistBenifit(): Promise<any> {
     connection.connect();
 
     return new Promise((resolve, reject) => {
-      connection.query(`SELECT * FROM ${tableNames.BENIFITS} WHERE deleted != 1`, (error, result) => {
+      connection.query(`SELECT * FROM ${tableNames.BENIFITS} WHERE deleted != 1 AND \'show\' != 0`, (error, result) => {
         connection.end();
         if (error) {
           reject(error);
