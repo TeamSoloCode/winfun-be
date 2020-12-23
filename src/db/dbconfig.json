@@ -1,7 +1,7 @@
 {
-    "host": "18.139.199.158",
+    "host": "18.140.15.42",
     "port": 3306,
-    "user": "dev",
-    "password": "dev2020",
-    "database": "mva_dev"
+    "user": "mvagroup",
+    "password": "mvagroup",
+    "database": "mva_group"
 }

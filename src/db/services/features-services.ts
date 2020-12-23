@@ -113,7 +113,7 @@ export function fetchAllExistsFeature() : Promise<any> {
     connection.connect();
 
     return new Promise((resolve, reject) => {
-      connection.query(`SELECT * FROM ${tableNames.FEATURES} WHERE deleted != 1 AND \'show\' != 0`, (error, result) => {
+      connection.query(`SELECT * FROM ${tableNames.FEATURES} WHERE deleted != 1 AND \`show\` != 0`, (error, result) => {
         connection.end();
         if (error) {
           reject(error);
